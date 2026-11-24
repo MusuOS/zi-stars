@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>紫圈资料库</title>
+<link rel="stylesheet" href="style.css?v=20261123d">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+</head>
+<body>
+<header class="fbnav">
+  <div class="fbnav-in">
+    <div class="brand">
+      <span class="t">紫圈资料库</span>
+      <span class="s">43人 · 61事件 · 368关系</span>
+    </div>
+    <nav class="tabs">
+      <button class="tab active" data-view="people">人物</button>
+      <button class="tab" data-view="events">事件轴</button>
+      <button class="tab" data-view="graph">星图</button>
+      <span id="tabbg"></span><span id="tabind"></span>
+    </nav>
+  </div>
+</header>
+<main>
+  <!-- 人物 -->
+  <section id="view-people" class="view active">
+    <div class="toolbar card">
+      <input id="psearch" type="search" placeholder="搜名字 / 别名…" autocomplete="off">
+      <div class="sort-links">
+        <button id="sortNo" class="on">编号</button><span class="sep">/</span><button id="sortHot">热度</button>
+      </div>
+    </div>
+    <div class="people-wrap">
+      <div id="plist" class="plist card"></div>
+      <div id="pdetail" class="pdetail card"></div>
+    </div>
+  </section>
+  <!-- 事件轴 -->
+  <section id="view-events" class="view">
+    <div id="etype-filters" class="etype-filters"></div>
+    <div id="elist" class="elist"></div>
+  </section>
+  <!-- 星图 -->
+  <section id="view-graph" class="view">
+    <div class="graph-wrap" id="graphWrap">
+      <div id="graph3d"></div>
+      <div class="gcap">天球仪 · 拖拽转动 · 点击星星拜访</div>
+      <div id="graphLoading" class="graph-loading"><div class="spinner"></div><div>正在展开天球</div></div>
+      <div id="graphFallback" class="graph-fallback" style="display:none">
+        <div class="fb-text">星图加载失败</div>
+        <div class="fb-sub">3D 天球未能加载（可能是网络问题），刷新重试即可。<br>人物与事件视图不受影响。</div>
+        <button id="graphRetry" class="fb-retry">重试</button>
+      </div>
+      <div id="gtooltip" class="gtooltip"></div>
+    </div>
+  </section>
+</main>
+<footer class="foot">紫圈资料库 · 内部研究用 · 数据截至 2026-04</footer>
+<script src="app.js?v=20261123a"></script>
+</body>
+</html>
